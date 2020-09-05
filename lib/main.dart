@@ -23,6 +23,7 @@ Future<void> main() async {
   //runApp(MyApp());
 }
 
+//returns a [MaterialApp].
 class AuthExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class AuthExampleApp extends StatelessWidget {
   }
 }
 
-class AuthApp extends StatelessWidget {
+/*class AuthApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,6 +47,7 @@ class AuthApp extends StatelessWidget {
         ));
   }
 }
+*/
 
 /// Provides a UI to select a authentication type page
 class AuthTypeSelector extends StatelessWidget {
