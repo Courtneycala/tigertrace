@@ -17,8 +17,20 @@ import 'package:firebase_auth_platform_interface/firebase_auth_platform_interfac
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(AuthApp());
-  runApp(MyApp());
+  runApp(AuthExampleApp());
+  //runApp(MyApp());
+}
+
+class AuthExampleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Firebase Example App',
+        theme: ThemeData.dark(),
+        home: Scaffold(
+          body: AuthTypeSelector(),
+        ));
+  }
 }
 
 class MyApp extends StatelessWidget {
