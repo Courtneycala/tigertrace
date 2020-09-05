@@ -204,6 +204,6 @@ class AuthTypeSelector extends StatelessWidget {
   }
 }
 
-class FirebaseStorage extends StatelessWidget {
-  FirebaseStorage({Key key, this.title}) : super(key: key);
-}
+//class FirebaseStorage extends StatelessWidget {
+//FirebaseStorage({Key key, this.title}) : super(key: key);
+//}
