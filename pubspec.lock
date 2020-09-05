@@ -71,13 +71,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  crypto:
-    dependency: "direct main"
-    description:
-      name: crypto
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.5"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -99,27 +92,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "7.3.0"
-  firebase_analytics:
-    dependency: "direct main"
-    description:
-      name: firebase_analytics
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "5.0.16"
-  firebase_analytics_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_analytics_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
-  firebase_analytics_web:
-    dependency: transitive
-    description:
-      name: firebase_analytics_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.1"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -169,13 +141,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.11"
-  flushbar:
-    dependency: transitive
-    description:
-      name: flushbar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.10.4"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -188,13 +153,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.7.2"
-  flutter_login:
-    dependency: "direct main"
-    description:
-      name: flutter_login
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.14"
   flutter_signin_button:
     dependency: "direct main"
     description:
@@ -282,13 +240,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
-  nested:
-    dependency: transitive
-    description:
-      name: nested
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.4"
   path:
     dependency: transitive
     description:
@@ -317,13 +268,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  provider:
-    dependency: transitive
-    description:
-      name: provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.3.2+2"
   quiver:
     dependency: transitive
     description:
@@ -385,13 +329,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.17"
-  transformer_page_view:
-    dependency: transitive
-    description:
-      name: transformer_page_view
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.6"
   typed_data:
     dependency: transitive
     description:
@@ -408,4 +345,4 @@ packages:
     version: "2.0.8"
 sdks:
   dart: ">=2.9.0-14.0.dev <3.0.0"
-  flutter: ">=1.16.0 <2.0.0"
+  flutter: ">=1.12.13+hotfix.6 <2.0.0"

@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, User;
 import 'package:flutter_signin_button/button_builder.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;

@@ -31,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
               child: const Text('Sign out'),
               textColor: Theme.of(context).buttonColor,
               onPressed: () async {
-                final User user = await _auth.currentUser;
+                final User user = _auth.currentUser;
                 if (user == null) {
                   Scaffold.of(context).showSnackBar(const SnackBar(
                     content: Text('No one has signed in.'),
@@ -202,7 +202,7 @@ class _EmailLinkSignInSectionState extends State<_EmailLinkSignInSection> {
                   text: "Sign In",
                   backgroundColor: Colors.blueGrey[700],
                   onPressed: () async {
-                    await _signInWithEmailAndLink();
+                    _signInWithEmailAndLink();
                   },
                 ),
               ),
@@ -233,7 +233,7 @@ class _EmailLinkSignInSectionState extends State<_EmailLinkSignInSection> {
           ));
 
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("An email has been sent to ${_userEmail}"),
+        content: Text("An email has been sent to $_userEmail"),
       ));
     } catch (e) {
       print(e);
@@ -427,7 +427,7 @@ class _PhoneSignInSectionState extends State<_PhoneSignInSection> {
       await _auth.signInWithCredential(phoneAuthCredential);
       widget._scaffold.showSnackBar(SnackBar(
         content: Text(
-            "Phone number automatically verified and user signed in: ${phoneAuthCredential}"),
+            "Phone number automatically verified and user signed in: $phoneAuthCredential"),
       ));
     };
 
@@ -462,7 +462,7 @@ class _PhoneSignInSectionState extends State<_PhoneSignInSection> {
           codeAutoRetrievalTimeout: codeAutoRetrievalTimeout);
     } catch (e) {
       widget._scaffold.showSnackBar(SnackBar(
-        content: Text("Failed to Verify Phone Number: ${e}"),
+        content: Text("Failed to Verify Phone Number: $e"),
       ));
     }
   }
@@ -687,7 +687,7 @@ class _OtherProvidersSignInSectionState
     } catch (e) {
       print(e);
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with GitHub: ${e}"),
+        content: Text("Failed to sign in with GitHub: $e"),
       ));
     }
   }
@@ -706,7 +706,7 @@ class _OtherProvidersSignInSectionState
     } catch (e) {
       print(e);
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Facebook: ${e}"),
+        content: Text("Failed to sign in with Facebook: $e"),
       ));
     }
   }
@@ -734,7 +734,7 @@ class _OtherProvidersSignInSectionState
     } catch (e) {
       print(e);
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Twitter: ${e}"),
+        content: Text("Failed to sign in with Twitter: $e"),
       ));
     }
   }
@@ -767,7 +767,7 @@ class _OtherProvidersSignInSectionState
       print(e);
 
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Google: ${e}"),
+        content: Text("Failed to sign in with Google: $e"),
       ));
     }
   }
