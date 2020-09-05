@@ -11,8 +11,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_signin_button/button_builder.dart';
 import 'package:firebase_auth_platform_interface/firebase_auth_platform_interface.dart';
 
-//import 'package:flutter_signin_button/register_page.dart';
-//import 'package:flutter_signin_button/signin_page.dart';
+import './register_page.dart';
+import './signin_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -181,7 +181,7 @@ class AuthTypeSelector extends StatelessWidget {
               icon: Icons.person_add,
               backgroundColor: Colors.indigo,
               text: 'Registration',
-              // onPressed: () => _pushPage(context, RegisterPage()),
+              onPressed: () => _pushPage(context, RegisterPage()),
             ),
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
@@ -191,7 +191,7 @@ class AuthTypeSelector extends StatelessWidget {
               icon: Icons.verified_user,
               backgroundColor: Colors.orange,
               text: 'Sign In',
-              // onPressed: () => _pushPage(context, SignInPage()),
+              onPressed: () => _pushPage(context, SignInPage()),
             ),
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
