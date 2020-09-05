@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "430603090527",
+    "firebase_url": "https://tiger-trace.firebaseio.com",
+    "project_id": "tiger-trace",
+    "storage_bucket": "tiger-trace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430603090527:android:750c3a68fa5f0ad559f9ea",
+        "android_client_info": {
+          "package_name": "com.teamPR.TigerTrace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430603090527-bv8od87e150c3kaaik7ino7puiavdv3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFIUXKz44OLFqrzlDutCFio6wXYRHBGq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430603090527-bv8od87e150c3kaaik7ino7puiavdv3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
