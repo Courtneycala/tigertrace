@@ -14,7 +14,10 @@ import 'package:firebase_auth_platform_interface/firebase_auth_platform_interfac
 //import 'package:flutter_signin_button/register_page.dart';
 //import 'package:flutter_signin_button/signin_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(AuthApp());
   runApp(MyApp());
 }
 
