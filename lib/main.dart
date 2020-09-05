@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_login/flutter_login.dart';
@@ -185,4 +187,8 @@ class AuthTypeSelector extends StatelessWidget {
       ),
     );
   }
+}
+
+class FirebaseStorage extends StatelessWidget {
+  FirebaseStorage({Key key, this.title}) : super(key: key);
 }
