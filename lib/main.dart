@@ -1,10 +1,13 @@
 import 'dart:js';
+import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_blue/flutter_blue.dart';
+
 // Copyright 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -23,6 +26,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(AuthExampleApp());
   //runApp(MyApp());
+  //runApp(FlutterBlueApp());
 }
 
 final FirebaseFirestore firestore = FirebaseFirestore.instance;
