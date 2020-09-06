@@ -1,10 +1,14 @@
+import 'dart:js';
+import 'dart:async';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 /*
 import 'package:crypto/crypto.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_blue/flutter_blue.dart';
-*/
+
 // Copyright 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -16,14 +20,18 @@ import 'package:flutter_signin_button/button_builder.dart';
 import './register_page.dart';
 import './signin_page.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(AuthExampleApp());
   //runApp(MyApp());
+  //runApp(FlutterBlueApp());
 }
 
-//returns a [MaterialApp].
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
 class AuthExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
