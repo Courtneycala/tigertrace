@@ -39,7 +39,7 @@ void scanForDevices() async {
   var bluetoothInstance;
 
   var scan = bluetoothInstance.scan().listen((scanResult) async {
-    for (var b in scanSubscription) {
+    for (var b in scan) {
       if (scanResult.device.name == "your_device_name") {
         device2 = scanResult.device;
       }
