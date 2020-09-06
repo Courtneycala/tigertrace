@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blue/flutter_blue.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocator/geolocator.dart';
 
 // Import the firebase_core and cloud_firestore plugin
 import 'package:firebase_core/firebase_core.dart';
@@ -15,10 +17,12 @@ BluetoothDevice device1;
 BluetoothDevice device2;
 BluetoothState state;
 BluetoothDeviceState deviceState;
+//TODO; GO BACK AND SET THIS TO THE USER'S DATA
+var mySignal = 903818839;
 
 @override
 void initState() {
-  super.initState();
+  //var initState = super.initState();
 
 //checks bluetooth current state
 
@@ -36,18 +40,53 @@ void initState() {
 }
 
 void scanForDevices() async {
-  var bluetoothInstance;
+  final FlutterBlue flutterBlue = FlutterBlue.instance;
 
-  var scan = bluetoothInstance.scan().listen((scanResult) async {
-    for (var b in scan) {
-      if (scanResult.device.name == "your_device_name") {
-        device2 = scanResult.device;
-      }
-      b = new DateTime.now();
+  final List<BluetoothDevice> devicesList = new List<BluetoothDevice>();
+  @override
+  List<BluetoothDevice> _addDeviceTolist(final BluetoothDevice device) {
+    if (!devicesList.contains(device)) {
+      devicesList.add(device);
     }
+    return devicesList;
+  }
+}
+
+BluetoothDevice singalInteraction() {
+  var bluetoothInstance;
+  List<ScanResult> scanResult = new List<ScanResult>();
+  var scan = bluetoothInstance.scan().listen((scanResult));
+  for (var b in scan) {
+    if (b.device.name == "your_device_name") {
+      device2 = b.device;
+      createRecord(device2);
+    }
+  }
+  print("found device");
+
+  return device2;
+}
+
+void createRecord(var sigB) async {
+  final databaseReference = FirebaseFirestore.instance;
+  Position position =
+      await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  var now = new DateTime.now();
+  await databaseReference
+      .collection("Interactions")
+      .doc("S3UJBOETMFJoK0g1TXzi")
+      .set({
+    'Place': position,
+    'Signal A': mySignal,
+    'Signal B': sigB,
+    'Time': now
   });
 
-  print("found device");
+  DocumentReference ref = await databaseReference.collection("books").add({
+    'title': 'Flutter in Action',
+    'description': 'Complete Programming Guide to learn Flutter'
+  });
+  //print(ref.doc);
 }
 
 /*
@@ -116,6 +155,7 @@ class FlutterBlueApp extends StatelessWidget {
   }
 }
 
+*/
 class BluetoothOffScreen extends StatelessWidget {
   const BluetoothOffScreen({Key key, this.state}) : super(key: key);
 
@@ -148,5 +188,3 @@ class BluetoothOffScreen extends StatelessWidget {
     );
   }
 }
-
-*/
