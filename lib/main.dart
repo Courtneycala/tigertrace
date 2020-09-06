@@ -16,12 +16,16 @@ import 'package:firebase_auth_platform_interface/firebase_auth_platform_interfac
 import './register_page.dart';
 import './signin_page.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(AuthExampleApp());
   //runApp(MyApp());
 }
+
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
 class AuthExampleApp extends StatelessWidget {
   @override
@@ -203,7 +207,3 @@ class AuthTypeSelector extends StatelessWidget {
     );
   }
 }
-
-//class FirebaseStorage extends StatelessWidget {
-//FirebaseStorage({Key key, this.title}) : super(key: key);
-//}
